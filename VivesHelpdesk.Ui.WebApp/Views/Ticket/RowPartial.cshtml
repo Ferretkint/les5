@@ -1,0 +1,12 @@
+﻿@model Ticket
+<tr>
+    <td>
+        @Model.CreatedDate.ToLocalTime().ToShortDateString() 
+        @Model.CreatedDate.ToLocalTime().ToShortTimeString()
+    </td>
+    <td>@Model.Title</td>
+    <td>@Model.Author</td>
+    <td>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+    </td>
+</tr>

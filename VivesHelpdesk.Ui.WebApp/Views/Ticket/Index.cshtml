@@ -1,0 +1,23 @@
+﻿@model IList<Ticket>
+@{
+    ViewBag.Title = "Manage Tickets";
+}
+
+<h1>Manage Tickets</h1>
+<a asp-action="Create" class="btn btn-primary">New Ticket</a>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Created</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var ticket in Model)
+        {
+            <partial name="RowPartial" model="ticket"/>
+        }
+    </tbody>
+</table>
